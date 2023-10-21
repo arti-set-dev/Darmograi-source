@@ -1,0 +1,20 @@
+// если вы хотите использовать sass-переменные - удалите root
+// colors
+:root {
+  // base
+  --font-family: "Vela Sans GX", sans-serif;
+  --second-family: "Wulkan Display", sans-serif;
+  --third-family: "Tahoma", sans-serif;
+  --content-width: 1344px;
+  --container-offset: 16px;
+  --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
+  --ui-transition: 0.3s;
+
+  // colors
+  --black: #0a0908;
+  --graphite: #484848;
+  --beige: #e3d9d0;
+  --white: #fff;
+  --dark-beige: #978771;
+  --light-beige: #fcf7f1;
+}

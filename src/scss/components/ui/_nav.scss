@@ -1,0 +1,47 @@
+.nav {
+  &__list {
+    display: flex;
+    gap: 32px;
+
+    @include small-desktop {
+      flex-direction: column;
+    }
+
+    @include tablet {
+      align-items: flex-end;
+    }
+
+    @include mobile {
+      margin-bottom: 32px;
+    }
+  }
+
+  &__item {
+    &--m {
+      margin-left: auto;
+
+      @include small-desktop {
+        margin: 0;
+      }
+    }
+  }
+
+  &__btn {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 143%;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--black);
+
+    @include small-desktop {
+      font-family: var(--second-family);
+      font-weight: 600;
+      font-size: 36px;
+      line-height: 117%;
+      text-align: right;
+      text-transform: uppercase;
+      color: var(--black);
+    }
+  }
+}

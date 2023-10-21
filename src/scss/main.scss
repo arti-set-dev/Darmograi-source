@@ -1,0 +1,23 @@
+// базовые подключения
+@import "vars";
+@import "mixins";
+@import "fonts";
+@import "settings";
+
+// подключения ui компонентов страницы
+@import "./components/ui/btn";
+@import "./components/ui/nav";
+@import "./components/ui/logo";
+@import "./components/ui/tickers";
+@import "./components/ui/card";
+@import "./components/ui/brands";
+
+// подключения компонентов страницы
+@import "./components/header";
+@import "./components/hero";
+@import "./components/promo";
+@import "./components/services";
+@import "./components/portfolio";
+@import "./components/advantages";
+@import "./components/products";
+@import "./components/footer";

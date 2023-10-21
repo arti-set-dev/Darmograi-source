@@ -1,0 +1,40 @@
+.advantages {
+  padding: 90px 0 97px;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    gap: 48px;
+
+    @include small-tablet {
+      flex-direction: column-reverse;
+    }
+  }
+
+  &__wrapper {
+    flex-basis: 30%;
+  }
+
+  &__title {
+    margin-bottom: 17px;
+  }
+
+  &__text {
+    margin-bottom: 36px;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: 0.02em;
+    color: var(--graphite);
+  }
+
+  &__btn-primary {
+    @include small-tablet {
+      margin: 0 auto;
+    }
+
+    @include mobile {
+      max-width: 100%;
+    }
+  }
+}

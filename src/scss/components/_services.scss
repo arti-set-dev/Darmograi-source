@@ -1,0 +1,216 @@
+.services {
+  overflow-x: hidden;
+  padding: 64px 0 92px;
+
+  &__container {
+    position: relative;
+
+    &::before,
+    &::after {
+      @include pseudo;
+
+      position: absolute;
+      top: 0;
+      z-index: 5;
+      width: 24px;
+      height: 100%;
+      background-color: var(--white);
+
+      @include small-tablet {
+        display: none;
+      }
+    }
+
+    &::before {
+      left: -8px;
+    }
+
+    &::after {
+      right: -8px;
+    }
+  }
+
+  &__wraper {
+    position: absolute;
+    top: 24px;
+    z-index: 5;
+    width: 30%;
+    max-width: 410px;
+
+    @include tablet {
+      width: 45%;
+    }
+
+    @include small-tablet {
+      position: static;
+      margin-bottom: 37px;
+      width: auto;
+    }
+  }
+
+  &__title {
+    margin-bottom: 12px;
+  }
+
+  &__text {
+    margin-bottom: 36px;
+  }
+
+  &__btn {
+    @include small-tablet {
+      max-width: 100%;
+    }
+  }
+
+  &__list {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    overflow: hidden;
+    margin: 0 -24px;
+
+    &::before,
+    &::after {
+      @include pseudo;
+
+      position: absolute;
+      top: 1px;
+    }
+
+    &::before {
+      width: 100%;
+      height: 25px;
+      background-color: var(--white);
+
+      @include small-tablet {
+        display: none;
+      }
+    }
+
+    &::after {
+      width: 1px;
+      height: 100%;
+      background-color: var(--white);
+    }
+
+    @include small-tablet {
+      @include hide-scrollbar;
+
+      display: flex;
+      overflow-x: scroll;
+      margin: 0;
+      margin-right: -16px;
+      margin-bottom: 36px;
+      scroll-snap-type: x mandatory;
+      gap: 24px;
+    }
+  }
+
+  &__item {
+    margin: 1px -1px -2px 0;
+    border: 1px solid var(--beige);
+    padding: 24px;
+
+    &:first-child {
+      grid-column: 2/3;
+
+      @include small-tablet {
+        grid-column: auto;
+      }
+    }
+
+    @include small-tablet {
+      position: relative;
+      flex-shrink: 0;
+      border: none;
+      padding: 0;
+      max-width: 240px;
+      scroll-snap-align: start;
+
+      &:not(:last-child) {
+        &::before {
+          @include pseudo;
+
+          position: absolute;
+          right: -11px;
+          top: 0;
+          width: 1px;
+          height: 100%;
+          background-color: var(--beige);
+        }
+      }
+    }
+  }
+
+  &__figure {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100%;
+  }
+
+  &__picture {
+    position: relative;
+    overflow: hidden;
+    margin-top: auto;
+    margin-bottom: 24px;
+
+    &::after {
+      content: "подробнее";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      display: block;
+      padding: 16px;
+      width: 100%;
+      font-family: var(--font-family);
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 143%;
+      letter-spacing: 0.08em;
+      text-align: center;
+      text-transform: uppercase;
+      color: var(--white);
+      background-color: var(--black);
+      transform: translateY(100%);
+      transition: transform var(--ui-transition) ease;
+    }
+
+    &:hover {
+      &::after {
+        transform: translateY(0);
+      }
+    }
+
+    @include small-tablet {
+      margin-bottom: 13px;
+    }
+  }
+
+  &__desc {
+    display: inline-block;
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 120%;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--black);
+
+    @include small-tablet {
+      position: relative;
+      font-size: 16px;
+      line-height: 200%;
+
+      &::after {
+        @include pseudo;
+
+        position: absolute;
+        bottom: 3px;
+        width: 100%;
+        height: 1px;
+        background-color: var(--black);
+      }
+    }
+  }
+}

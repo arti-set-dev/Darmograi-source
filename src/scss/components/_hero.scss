@@ -1,0 +1,45 @@
+.hero {
+  @include bg-cover;
+  @include image-set("../img/hero-image");
+
+  display: flex;
+  padding-bottom: 60px;
+  min-height: 90dvh;
+  transition: min-height var(--ui-transition) ease;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__title {
+    margin-top: auto;
+    margin-bottom: 8px;
+    max-width: 720px;
+  }
+
+  &__subtitle {
+    margin-bottom: 32px;
+    max-width: 720px;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 140%;
+    letter-spacing: 0.02em;
+    text-align: center;
+    color: var(--white);
+
+    @include mobile {
+      font-size: 18px;
+      line-height: 144%;
+    }
+  }
+
+  &__btns {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    font-size: 0;
+    gap: 16px;
+  }
+}

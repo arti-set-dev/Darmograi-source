@@ -1,0 +1,88 @@
+.header {
+  padding: 21px 0;
+  background-color: var(--white);
+
+  &__container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+    @include small-desktop {
+      position: static;
+      z-index: 20;
+      transform: initial;
+    }
+  }
+
+  &__nav {
+    margin-right: 32px;
+    width: 100%;
+    height: fit-content;
+    max-width: 974px;
+
+    &.menu--active {
+      @include small-desktop {
+        transform: translateX(0);
+      }
+    }
+
+    @include small-desktop {
+      @include hide-scrollbar;
+
+      position: fixed;
+      right: 0;
+      top: 0;
+      z-index: 15;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      overflow: auto;
+      margin: 0;
+      padding: var(--container-offset);
+      padding-top: 105px;
+      height: 100%;
+      min-width: 375px;
+      max-width: 375px;
+      background-color: var(--white);
+      transform: translateX(100%);
+      transition: transform var(--ui-transition) ease;
+    }
+  }
+
+  &__btn {
+    display: flex;
+    justify-content: center;
+
+    @include mobile {
+      max-width: 100%;
+      background-color: var(--beige);
+    }
+  }
+
+  &__contacts {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 335px;
+    gap: 32px;
+
+    @include small-desktop {
+      margin: 0 33px 0 auto;
+    }
+
+    @include mobile {
+      flex-direction: column;
+      align-items: flex-end;
+      margin: 0;
+      margin-top: auto;
+    }
+  }
+}

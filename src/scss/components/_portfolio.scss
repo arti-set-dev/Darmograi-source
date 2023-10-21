@@ -1,0 +1,138 @@
+.portfolio {
+  padding: 85px 0;
+  background-color: var(--light-beige);
+
+  &__container {
+    position: relative;
+  }
+
+  &__title {
+    position: absolute;
+    top: 0;
+
+    @include small-tablet {
+      position: static;
+    }
+  }
+
+  &__tabs {
+    margin-bottom: 36px;
+  }
+
+  &__nav {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    margin-bottom: 50px;
+    margin-left: auto;
+    padding: 18px 0;
+    width: 55%;
+    max-width: 700px;
+    gap: 24px;
+
+    @include mobile {
+      gap: 16px;
+    }
+
+    @include small-tablet {
+      justify-content: flex-start;
+      width: auto;
+      max-width: 100%;
+    }
+  }
+
+  &__item {
+    &--title {
+      margin-right: auto;
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(159px, 1fr));
+    gap: 24px;
+
+    @include mobile {
+      gap: 16px;
+    }
+  }
+
+  &__btn {
+    position: relative;
+    padding-left: 13px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 143%;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--black);
+    opacity: 0.4;
+    transition: opacity var(--ui-transition) ease;
+
+    &::before {
+      @include pseudo;
+
+      position: absolute;
+      left: 0;
+      top: 50%;
+      border-radius: 50%;
+      width: 6px;
+      height: 6px;
+      background-color: var(--black);
+      opacity: 0;
+      transform: translateY(-50%);
+      transition: opacity var(--ui-transition) ease;
+    }
+
+    &:focus {
+      color: inherit;
+      background-color: transparent;
+    }
+
+    &.tabs__nav-btn--active {
+      opacity: 1;
+
+      &::before {
+        opacity: 1;
+      }
+    }
+
+    @include hover {
+      opacity: 1;
+
+      &::before {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__content {
+    position: relative;
+
+    &::before {
+      @include pseudo;
+
+      position: absolute;
+      top: -37px;
+      width: 100%;
+      height: 1px;
+      background-color: var(--beige);
+    }
+  }
+
+  &__image {
+    width: 100%;
+  }
+
+  &__btn-primary {
+    margin: 0 auto;
+
+    @include mobile {
+      max-width: 100%;
+      text-align: center;
+    }
+  }
+
+  @include mobile {
+    padding: 64px 0;
+  }
+}
